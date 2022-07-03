@@ -1,12 +1,43 @@
-/* História:
-
- A data é 16 de dezembro de 1835 - manhã, você é o futuro maior naturalista da terra, Charles Darwin e está abordo do navio Beagle que é liderado pelo grande capitão FitzRoy. Há pouco vocês chegaram nas ilhas de Galápagos depois de uma incrível jornada que perdurou por meses ao mar. Entretanto, você que está sorrindo e animado assim como toda a tripulação por finalmente ver terra firme, vai aos poucos trocando seu semblante por um de instigação ao perceber que os ventos que tocam seus ouvidos parecem carregar murmúrios quase inaudíveis dizendo: "Sacrifícios!!"
- 
-  A data é 17 de dezembro de 1835, na manhã seguinte você junto com mais 5 marinheiros vão desembarcar e fazer uma expedição as ilhas de Galápagos para estudo da flora e fauna local. 
-
-
-*/
 const prompt = require('prompt-sync')();
+console.log("\n================================================================================");
+console.log(`\nResumo:`);
+console.log(`\nVocê é um ladrão conhecido mundialmente com 'Wolf' e está planejando um grande roubo, o alvo: o milhonário Fitz Roy.\nEle possui uma vasta coleção de arte e ela logo será sua...\n`);
+console.log("================================================================================");
 
-let dificuldade;
+let contador = 0;
+let novaEscolha;
 
+function verificacao(escolha){
+ 
+    if(escolha === 1 || escolha === 2){
+        resposta(escolha);
+    }else{
+        while(true){
+
+            console.log(`\nWolf, essa não é a resposta esperada...`);
+            console.log(`| Digite: 1 p/ SIM  OU  Digite: 2 p/ NÃO | \n`);
+            novaEscolha = +prompt(`Nova Resposta:`);
+            
+            if(novaEscolha === 1 || novaEscolha === 2){
+                resposta(novaEscolha);
+                break;
+            }
+        }
+
+    }
+}
+
+function resposta(escolha) {
+     if (escolha === 1) {
+            console.log("Anotado Wolf!");
+            contador++
+    } else{
+            console.log("Isso vai dificultar as coisas...");   
+    }    
+}
+
+
+
+console.log(`| Digite: 1 p/ SIM  OU  Digite: 2 p/ NÃO |`);
+console.log(`\nWolf, você conseguiu a planta da mansão do Fitz Roy?: `);
+const pergunta01 = verificacao(+prompt(`Resposta:`));
